@@ -7,9 +7,9 @@ node {
   println(">>>>> BRANCH ${scmRef}")
   println(">>>>> URL ${scmUrl}")
   
-  def scmUrl = scm.getUserRemoteConfigs()
+  def scmRC = scm.getUserRemoteConfigs()
   
-  for (def s in scmUrl) {
+  for (def s in scmRC) {
     println(s.getUrl())
   }
 }
