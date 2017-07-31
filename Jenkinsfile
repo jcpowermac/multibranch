@@ -1,6 +1,9 @@
 
 node {
   echo sh(returnStdout: true, script: 'env')
-  echo scm.getUserRemoteConfigs()
+  def scmUrl = scm.getUserRemoteConfigs()
   
+  for (def s in scmUrl) {
+    println(s.getUrl())
+  }
 }
